@@ -1,0 +1,12 @@
+def fib_bottom_up(n):
+    memo = [None] * (n+1)
+    memo[1] = 1
+    memo[2] = 1
+    if n == 1 or n == 2:
+        return 1
+    for i in range(3, n+1):
+        memo[i] = memo[i-1] + memo[i-2]
+    return memo[n]
+print(fib_bottom_up(6))
+
+# Instantaneous and no recursion error as it goes from the bottom to the top (f(6)).
