@@ -1,0 +1,21 @@
+memo = [] # the array
+def fib_store(n, memo):
+    if memo[n] != None:
+        return memo[n]
+    if n == 1 or n == 2:
+        result = 1
+    else:
+        result = fib_store(n-1, memo) + fib_store(n-2, memo)
+    memo[n] = result
+    return result
+
+def fib_store2(n):
+    memo = [None] * (n+1)
+    return fib_store(n, memo)
+
+print(fib_store2(6))
+
+# Takes a shorter time with memo as it stores into a storage which can be extracted anytime to lessen the amount of repetition needed.
+# Thus, has a linear time and space compared to just recursion approach which makes the process almost instantanous.
+
+# However, there is a limit to it, which is 1000 ,before the recursion error appears.
